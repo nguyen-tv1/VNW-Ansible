@@ -1,0 +1,16 @@
+netdata_git_repo: https://github.com/netdata/netdata.git
+netdata_source_dir: /opt/netdata/
+netdata_installer: /opt/netdata/netdata-installer.sh
+
+packages:
+- zlib-devel
+- libuuid-devel 
+- libmnl-devel
+- gcc
+- make 
+- git 
+- autoconf 
+- autogen 
+- automake 
+- pkgconfig 
+- libuv-devel 

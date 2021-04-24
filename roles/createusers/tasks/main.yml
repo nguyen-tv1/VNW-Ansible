@@ -1,0 +1,10 @@
+- name: create users belong to sys group
+  user: name={{ item.username }} shell=/bin/bash group=3 createhome=yes comment='create with ansible' 
+  with_items: "{{ users }}"
+
+- name: Add authorized keys
+  authorized_key:
+    user: "{{ item.username }}"
+    key: "{{ lookup('file', 'files/{{ item.username }}.pub') }}"
+  with_items: "{{ users }}"
+  

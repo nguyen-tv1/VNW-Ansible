@@ -1,0 +1,13 @@
+- name: install yum-plugin-priorities
+  yum:
+    name: yum-plugin-priorities
+    state: latest
+
+- name: copy local centos repos
+  copy:
+    src: local_centos.repo
+    dest: /etc/yum.repos.d/local_centos.repo
+    owner: root
+    group: root
+    mode: '0644'
+

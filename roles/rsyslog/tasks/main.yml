@@ -1,0 +1,11 @@
+- name: Copy rsyslog config
+  copy:
+   src: system-inf-logs.conf
+   dest: /etc/rsyslog.d/system-inf-logs.conf
+   mode: '0644'
+
+- name: Restart rsyslog
+  service:
+    name: rsyslog
+    state: restarted
+

@@ -1,0 +1,13 @@
+[local-base]
+name=CentOS Base
+baseurl=http://repo.glxplay.io/CentOS/7.7.1908/base/
+gpgcheck=0
+enabled=1
+priority=1
+
+[local-epel] 
+name=CentOS EPEL 
+baseurl=http://repo.glxplay.io/EPEL/7/
+gpgcheck=0 
+enabled=1
+priority=1

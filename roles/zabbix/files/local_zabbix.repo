@@ -1,0 +1,6 @@
+[local-zabbix] 
+name=Local Zabbix 5.0 Repo for Centos 7
+baseurl=http://repo.glxplay.io/zabbix/5.0/rhel/7/
+gpgcheck=0 
+enabled=1
+priority=1

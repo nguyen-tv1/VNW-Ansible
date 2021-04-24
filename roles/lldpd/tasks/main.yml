@@ -1,0 +1,16 @@
+- name: install lldpd
+  yum:
+    name: lldpd
+    state: latest
+    
+- name: config lldpd
+  copy:
+   src: lldpd
+   dest: /etc/default/lldpd
+   mode: '0644'
+
+- name: Restart lldpd
+  service:
+    name: lldpd
+    state: restarted
+    enabled: yes

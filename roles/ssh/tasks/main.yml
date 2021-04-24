@@ -1,0 +1,17 @@
+- name: config sshd_config
+  copy:
+   src: sshd_config
+   dest: /etc/ssh/sshd_config
+   mode: '0600'
+
+- name: ListenAddress for SSH
+  lineinfile:
+   path: /etc/ssh/sshd_config
+   regexp: '^#ListenAddress ::'
+   insertafter: '^#ListenAddress ::'
+   line: ListenAddress {{inventory_hostname}}
+
+- name: restart service sshd
+  service:
+    name: sshd
+    state: restarted

@@ -1,0 +1,25 @@
+---
+- name: Deploy local server
+  hosts: all
+  become: yes
+  become_user: root
+
+  roles:
+      - createusers
+      - sudoers
+      - nameserver_local
+      - repo_local_7
+      - chrony
+      - bashrc
+      - motd
+      - logrotate
+      - rsyslog
+      - route-vlan112
+      - SELinux_Firewall_local
+      - reboot
+      - update
+      - install_packages
+      - zabbix
+      - lldpd
+      - ssh
+      - change_root_pwd

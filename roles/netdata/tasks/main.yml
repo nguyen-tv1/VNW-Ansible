@@ -1,0 +1,43 @@
+---
+- name: Install epel-release
+  yum: 
+    name: epel-release
+    state: latest
+
+- name: Install service
+  yum: 
+    name: "{{ packages}}"
+    state: latest
+    lock_timeout: 180
+
+- name: Clone or Pull for Install or Update
+  git:
+    repo: "{{ netdata_git_repo }}"
+    dest: "{{ netdata_source_dir }}"
+    force: yes
+
+- name: Build and install
+  command: bash netdata-installer.sh --dont-wait --libs-are-really-here
+  args:
+    chdir: /opt/netdata/
+  become: yes
+
+- name: copy file stream.conf
+  copy:
+    src: stream.conf
+    dest: /etc/netdata
+    owner: root
+    group: root
+
+- name: ListenIP for Netdata
+  replace:
+   path: /etc/netdata/netdata.conf
+   regexp: '# bind to = \*'
+   replace: 'bind to = {{inventory_hostname}}'
+
+
+- name: Auto restart netdata service
+  service:
+    name: netdata
+    state: restarted
+    enabled: yes

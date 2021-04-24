@@ -1,0 +1,5 @@
+- name: copy route on vlan112
+  copy:
+    src: route-bond0.112
+    dest: /etc/sysconfig/network-scripts/route-bond0.112
+    mode: '0644'

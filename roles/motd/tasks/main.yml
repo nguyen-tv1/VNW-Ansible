@@ -1,0 +1,5 @@
+- name: copy motd
+  copy:
+    src: glxplay.sh
+    dest: /etc/profile.d/glxplay.sh
+    mode: '0644'

@@ -1,0 +1,38 @@
+- name: copy local zabbix repo
+  copy:
+    src: local_zabbix.repo
+    dest: /etc/yum.repos.d/local_zabbix.repo
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: install Zabbix-agent
+  yum:
+    name: zabbix-agent
+    state: latest
+    
+- name: config zabbix-agent
+  copy:
+   src: zabbix_agentd.conf
+   dest: /etc/zabbix/zabbix_agentd.conf
+   mode: '0644'
+
+- name: ListenIP for Zabbix-agent
+  lineinfile:
+   path: /etc/zabbix/zabbix_agentd.conf
+   regexp: '^# ListenIP=0.0.0.0'
+   insertafter: '^# ListenIP=0.0.0.0'
+   line: ListenIP={{inventory_hostname}}
+   
+- name: Set hostname config for Zabbix-agent
+  lineinfile:
+    dest: /etc/zabbix/zabbix_agentd.conf
+    regexp: '^Hostname='
+    insertafter: '^Hostname='
+    line: Hostname={{ ansible_hostname }}
+
+- name: Restart zabbix-agent
+  service:
+    name: zabbix-agent
+    state: restarted
+    enabled: yes

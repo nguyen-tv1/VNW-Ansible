@@ -1,0 +1,26 @@
+---
+- name: Deploy public server
+  hosts: all
+  become: yes
+  become_user: root
+
+  roles:
+      - createusers
+      - sudoers
+      - nameserver_public
+      - repo_local_7
+      - chrony
+      - bashrc
+      - motd
+      - logrotate
+      - rsyslog
+      - route-vlan112
+      - SELinux_Firewall_public
+      - reboot
+      - update
+      - install_packages
+      - zabbix
+      - netdata
+      - lldpd
+      - ssh
+      - change_root_pwd
