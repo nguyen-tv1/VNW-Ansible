@@ -1,5 +1,5 @@
 - name: Change Root Password
   user:
    name: root
-   password: "{{ 'GalaxyPlay@@2019' | password_hash('sha512') }}"
+   password: "{{ 'Vnetwork@@2021' | password_hash('sha512') }}"
    update_password: always

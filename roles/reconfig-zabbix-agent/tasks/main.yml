@@ -4,7 +4,7 @@
    path: /etc/zabbix/zabbix_agentd.conf
    regexp: '^ServerActive'
    insertafter: '^ServerActive'
-   line: ServerActive=10.10.12.30,10.10.21.0
+   line: ServerActive=103.90.220.67
 
 - name: Restart zabbix-agent
   service:

@@ -1,12 +1,3 @@
 users:
-  - username: duyvd
+  - username: nguyentv
     use_sudo: yes
-
-  - username: nhannt
-    use_sudo: yes
-    
-  - username: dungta
-    use_sudo: yes    
-    
-  - username: khanhnh
-    use_sudo: yes    
