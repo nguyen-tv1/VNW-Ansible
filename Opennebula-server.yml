@@ -15,7 +15,6 @@
       - reboot
       - update
       - install_packages
-      - zabbix
       - lldpd
       - ssh
       - change_root_pwd
