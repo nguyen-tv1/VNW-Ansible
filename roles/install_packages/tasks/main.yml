@@ -4,6 +4,7 @@
     state: latest
   vars:
     packages:
+    - epel-release
     - bash-completion
     - vim
     - lshw
