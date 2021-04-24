@@ -34,7 +34,7 @@ IPADDRESS=`hostname --all-ip-addresses`
 RELEASE=`cat /etc/redhat-release`
 #
 echo -e $tcLtGRN "================================================================"
-echo -e $tcW " Good $TIME, `whoami` !      $tcORANGE by Vnetwork System Infrastructure"
+echo -e $tcW " Good $TIME, `whoami` !  $tcORANGE by Vnetwork System Infrastructure"
 echo -e $tcLtGRN "================================================================"
 echo -e $tcW " - Time            : `date +"%A, %e %B %Y, %r"`"
 echo -e $tcW " - Hostname        : `hostname -f`"
