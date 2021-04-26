@@ -1,19 +1,9 @@
-- name: install chrony
-  apt:
-    name: chrony
-    state: latest
-    
-- name: config chronyd
-  copy:
-   src: chrony.conf
-   dest: /etc/chrony.conf
-   mode: '0644'
+---
+- name: intall chronyd
+  hosts: all
+  become: yes
+  become_user: root
 
-- name: Restart chronyd
-  service:
-    name: chronyd
-    state: restarted
-    enabled: yes
-    
-- name: Sync time
-  command: chronyc -a makestep
+  roles:
+      - chrony_ubuntu
+      
