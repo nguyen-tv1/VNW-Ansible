@@ -5,7 +5,7 @@
   become_user: root
 
   roles:
-      - update
+      - update_ubuntu
       - createusers
       - sudoers
       - chrony_ubuntu
@@ -14,7 +14,7 @@
       - nameserver_public
       - logrotate
       - reboot
-      - update
+      - update_ubuntu
       - install_packages_ubuntu
       - lldpd
       - ssh
