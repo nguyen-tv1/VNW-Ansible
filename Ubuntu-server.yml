@@ -10,7 +10,7 @@
       - sudoers
       - chrony_ubuntu
       - bashrc
-      - motd
+      - motd_ubuntu
       - nameserver_public
       - logrotate
       - reboot
