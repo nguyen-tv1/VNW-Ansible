@@ -1,0 +1,19 @@
+- name: install chrony
+  apt:
+    name: chrony
+    state: latest
+    
+- name: config chronyd
+  copy:
+   src: chrony.conf
+   dest: /etc/chrony.conf
+   mode: '0644'
+
+- name: Restart chronyd
+  service:
+    name: chronyd
+    state: restarted
+    enabled: yes
+    
+- name: Sync time
+  command: chronyc -a makestep
