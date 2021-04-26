@@ -6,7 +6,7 @@
 - name: config chronyd
   copy:
    src: chrony.conf
-   dest: /etc/chrony.conf
+   dest: /etc/chrony/chrony.conf
    mode: '0644'
 
 - name: Restart chronyd

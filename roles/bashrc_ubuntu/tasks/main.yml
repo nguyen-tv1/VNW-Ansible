@@ -1,0 +1,5 @@
+- name: copy bashrc
+  copy:
+    src: bashrc
+    dest: /etc/bash.bashrc
+    mode: '0644'
