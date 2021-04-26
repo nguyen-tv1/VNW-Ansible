@@ -5,6 +5,7 @@
   become_user: root
 
   roles:
+      - update
       - createusers
       - sudoers
       - chrony_ubuntu
