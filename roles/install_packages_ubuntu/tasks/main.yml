@@ -1,5 +1,5 @@
 - name: ensure a list of packages installed
-  yum:
+  apt:
     name: "{{ packages }}"
     state: latest
   vars:

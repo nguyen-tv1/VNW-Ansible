@@ -1,0 +1,5 @@
+- name: copy motd
+  copy:
+    src: Vnetwork.sh
+    dest: /etc/profile.d/Vnetwork.sh
+    mode: '0644'
