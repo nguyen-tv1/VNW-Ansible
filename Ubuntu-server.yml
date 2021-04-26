@@ -1,0 +1,20 @@
+---
+- name: Deploy Ubuntu servers
+  hosts: all
+  become: yes
+  become_user: root
+
+  roles:
+      - createusers
+      - sudoers
+      - chrony
+      - bashrc
+      - motd
+      - nameserver_public
+      - logrotate
+      - reboot
+      - update
+      - install_packages
+      - lldpd
+      - ssh
+      - change_root_pwd
