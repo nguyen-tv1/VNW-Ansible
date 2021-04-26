@@ -1,6 +1,6 @@
 - name: install chrony
   apt:
-    name: chrony
+    name: chronyd
     state: latest
     
 - name: config chronyd
