@@ -7,7 +7,7 @@
   roles:
       - createusers
       - sudoers
-      - chrony
+      - chrony_ubuntu
       - bashrc
       - motd
       - nameserver_public
