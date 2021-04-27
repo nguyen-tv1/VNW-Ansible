@@ -1,4 +1,6 @@
 - name: upgrade all packages
   apt:
+    update_cache: yes
     name: '*'
     state: latest
+
