@@ -13,6 +13,7 @@
       - motd_ubuntu
       - nameserver_public
       - logrotate
+      - reboot
       - update_ubuntu
       - install_packages_ubuntu
       - lldpd
